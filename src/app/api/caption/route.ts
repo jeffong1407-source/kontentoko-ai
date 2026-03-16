@@ -47,7 +47,7 @@ CAPTION PACK
 
 Bahasa Indonesia. Langsung tulis tanpa intro.`
   try {
-    const msg = await client.messages.create({ model:'claude-3-5-sonnet-20241022', max_tokens:1500, messages:[{role:'user',content:prompt}] })
+    const msg = await client.messages.create({ model:'claude-sonnet-4-20250514', max_tokens:1500, messages:[{role:'user',content:prompt}] })
     return NextResponse.json({ result: msg.content[0].type==='text' ? msg.content[0].text : 'Error' })
   } catch(e) { return NextResponse.json({ error: String(e) }, { status:500 }) }
 }
